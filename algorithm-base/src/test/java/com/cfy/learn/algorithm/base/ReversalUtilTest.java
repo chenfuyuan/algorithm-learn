@@ -3,7 +3,7 @@ package com.cfy.learn.algorithm.base;
 import com.cfy.learn.algorithm.base.link.BilateralLinkList;
 import com.cfy.learn.algorithm.base.link.ReversalUtil;
 import com.cfy.learn.algorithm.base.link.SingleLinkList;
-import com.cfy.learn.algorithm.util.GenerateArrayUtil;
+import com.uptool.core.util.GenerateArrayUtil;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

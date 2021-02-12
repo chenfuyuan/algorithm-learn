@@ -2,8 +2,9 @@ package com.cfy.learn.algorithm.base.link;
 
 import java.util.function.Consumer;
 
-import static com.cfy.learn.algorithm.util.EmptyUtil.isEmpty;
-import static com.cfy.learn.algorithm.util.EmptyUtil.isNotEmpty;
+import static com.uptool.core.util.EmptyUtil.isEmpty;
+import static com.uptool.core.util.EmptyUtil.isNotEmpty;
+
 
 /**
  * @Description: 链式存储 线性表

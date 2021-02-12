@@ -1,10 +1,9 @@
 package com.cfy.learn.test;
 
 import com.cfy.learn.algorithm.base.link.SingleNode;
-import com.cfy.learn.algorithm.util.EmptyUtil;
+import com.uptool.core.util.EmptyUtil;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.w3c.dom.Node;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +21,7 @@ public class EmptyUtilTest {
         int[] intArray = new int[10];
         double[] doubleArray = new double[10];
         long[] longArray = new long[10];
-        System.out.println("intArry is Empty = "+EmptyUtil.isNotEmpty(intArray));
+        System.out.println("intArry is Empty = "+ EmptyUtil.isNotEmpty(intArray));
         System.out.println("longArry is Empty = " +EmptyUtil.isNotEmpty(longArray));
         System.out.println("doubleArry is Empty = " +EmptyUtil.isNotEmpty(doubleArray));
 

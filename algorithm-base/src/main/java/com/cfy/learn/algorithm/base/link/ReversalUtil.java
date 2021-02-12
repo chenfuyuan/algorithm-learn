@@ -1,11 +1,10 @@
 package com.cfy.learn.algorithm.base.link;
 
-import com.cfy.learn.algorithm.util.NumberUtil;
 
+import com.uptool.core.util.NumberUtil;
 
-
-import static com.cfy.learn.algorithm.util.EmptyUtil.isEmpty;
-import static com.cfy.learn.algorithm.util.EmptyUtil.isNotEmpty;
+import static com.uptool.core.util.EmptyUtil.isEmpty;
+import static com.uptool.core.util.EmptyUtil.isNotEmpty;
 
 /**
  * @Description: 翻转链表工具类

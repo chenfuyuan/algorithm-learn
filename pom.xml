@@ -17,6 +17,7 @@
         <algorithm-version>1.0-SNAPSHOT</algorithm-version>
         <lombok-version>1.18.16</lombok-version>
         <junit-version>5.5.2</junit-version>
+        <upTool-version>1.0.0</upTool-version>
     </properties>
 
     <dependencyManagement>
@@ -43,6 +44,12 @@
                 <groupId>org.junit.jupiter</groupId>
                 <artifactId>junit-jupiter-engine</artifactId>
                 <version>${junit-version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.upTool</groupId>
+                <artifactId>upTool-core</artifactId>
+                <version>${upTool-version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

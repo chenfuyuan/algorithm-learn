@@ -1,12 +1,9 @@
 package com.cfy.learn.test;
 
 import com.cfy.learn.algorithm.base.link.BilateralLinkList;
-import com.cfy.learn.algorithm.util.GenerateArrayUtil;
+import com.uptool.core.util.GenerateArrayUtil;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import sun.java2d.loops.GeneralRenderer;
-
-import java.util.Random;
 
 /**
  * @Description: 测试双向链表
