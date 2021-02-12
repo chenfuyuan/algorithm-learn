@@ -10,10 +10,57 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>algorithm-common</module>
+        <module>algorithm-base</module>
     </modules>
 
     <properties>
         <algorithm-version>1.0-SNAPSHOT</algorithm-version>
+        <lombok-version>1.18.16</lombok-version>
+        <junit-version>5.5.2</junit-version>
     </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.algorithm.learn</groupId>
+                <artifactId>stdlib</artifactId>
+                <version>1.0</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok-version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.cfy.learn</groupId>
+                <artifactId>algorithm-common</artifactId>
+                <version>${algorithm-version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter-engine</artifactId>
+                <version>${junit-version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.1</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>

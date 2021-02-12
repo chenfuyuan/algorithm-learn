@@ -9,27 +9,13 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <description>算法公共模块</description>
-    <packaging>jar</packaging>
-    <artifactId>algorithm-common</artifactId>
+    <artifactId>algorithm-base</artifactId>
 
     <dependencies>
         <dependency>
-            <groupId>com.algorithm.learn</groupId>
-            <artifactId>stdlib</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-engine</artifactId>
+            <groupId>com.cfy.learn</groupId>
+            <artifactId>algorithm-common</artifactId>
         </dependency>
     </dependencies>
-
-
 
 </project>
