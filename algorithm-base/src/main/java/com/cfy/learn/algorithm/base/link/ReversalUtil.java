@@ -8,7 +8,7 @@ import static com.uptool.core.util.EmptyUtil.isNotEmpty;
 
 /**
  * @Description: 翻转链表工具类
- * @Author chenfuyuan
+ * @Author Vito.Chen
  * @Date 2021/2/12 20:46
  */
 public class ReversalUtil {

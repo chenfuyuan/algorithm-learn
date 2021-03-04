@@ -8,7 +8,7 @@ import static com.uptool.core.util.EmptyUtil.isNotEmpty;
 
 /**
  * @Description: 链式存储 线性表
- * @Author chenfuyuan
+ * @Author Vito.Chen
  * @Date 2021/2/12 11:07
  */
 public class SingleLinkList<T> {

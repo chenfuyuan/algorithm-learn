@@ -8,7 +8,7 @@ import static com.uptool.core.util.EmptyUtil.isNotEmpty;
 
 /**
  * @Description: 双向链表
- * @Author chenfuyuan
+ * @Author Vito.Chen
  * @Date 2021/2/12 21:19
  */
 public class BilateralLinkList<T> {

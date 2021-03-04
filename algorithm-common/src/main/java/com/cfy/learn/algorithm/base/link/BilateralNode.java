@@ -5,7 +5,7 @@ import lombok.Data;
 
 /**
  * @Description: 双链表节点
- * @Author chenfuyuan
+ * @Author Vito.Chen
  * @Date 2021/2/12 10:50
  */
 @Data

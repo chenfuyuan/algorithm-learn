@@ -8,7 +8,7 @@ import java.util.LinkedList;
 
 /**
  * @Description: TODO(这里用一句话描述这个类的作用)
- * @Author chenfuyuan
+ * @Author Vito.Chen
  * @Date 2021/2/12 13:03
  */
 @DisplayName("单链表测试")
