@@ -1,4 +1,5 @@
-package com.cfy.learn.algorithm.util.stdlib; /******************************************************************************
+package com.cfy.learn.algorithm.util.stdlib;
+/******************************************************************************
  *  Compilation:  javac GrayscalePicture.java
  *  Execution:    java GrayscalePicture imagename
  *  Dependencies: none
@@ -278,7 +279,7 @@ public final class GrayscalePicture implements ActionListener {
     }
 
    /**
-     * Returns the grayscale value of pixel ({@code col}, {@code row}) as a {@link java.awt.Color}.
+     * Returns the grayscale value of pixel ({@code col}, {@code row}) as a {@link Color}.
      *
      * @param col the column index
      * @param row the row index

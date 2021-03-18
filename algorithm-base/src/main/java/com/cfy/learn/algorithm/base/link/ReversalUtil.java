@@ -1,6 +1,10 @@
 package com.cfy.learn.algorithm.base.link;
 
 
+import com.cfy.learn.algorithm.datastruct.link.BilateralLinkList;
+import com.cfy.learn.algorithm.datastruct.link.BilateralNode;
+import com.cfy.learn.algorithm.datastruct.link.SingleLinkList;
+import com.cfy.learn.algorithm.datastruct.link.SingleNode;
 import com.uptool.core.util.NumberUtil;
 
 import static com.uptool.core.util.EmptyUtil.isEmpty;

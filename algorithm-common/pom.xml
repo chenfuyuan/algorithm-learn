@@ -33,6 +33,11 @@
             <groupId>com.upTool</groupId>
             <artifactId>upTool-core</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>com.algorithm.learn</groupId>
+            <artifactId>algs4</artifactId>
+        </dependency>
     </dependencies>
 
 

@@ -1,4 +1,4 @@
-package com.cfy.learn.algorithm.base.link;
+package com.cfy.learn.algorithm.datastruct.link;
 
 import lombok.Data;
 
@@ -17,6 +17,9 @@ public class SingleNode<T> extends Node<T> {
 
     public SingleNode(T value) {
         this.value = value;
+    }
+
+    public SingleNode() {
     }
 
 }

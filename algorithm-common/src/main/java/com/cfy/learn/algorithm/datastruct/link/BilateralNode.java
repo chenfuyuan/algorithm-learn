@@ -1,4 +1,4 @@
-package com.cfy.learn.algorithm.base.link;
+package com.cfy.learn.algorithm.datastruct.link;
 
 
 import lombok.Data;
@@ -23,6 +23,10 @@ public class BilateralNode<T> extends Node<T> {
 
     public BilateralNode(T value) {
         this.value = value;
+    }
+
+    public BilateralNode() {
+
     }
 
 }

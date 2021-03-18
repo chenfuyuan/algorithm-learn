@@ -1,4 +1,4 @@
-package com.cfy.learn.algorithm.base.link;
+package com.cfy.learn.algorithm.datastruct.link;
 
 import java.util.function.Consumer;
 

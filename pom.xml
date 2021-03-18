@@ -29,6 +29,12 @@
             </dependency>
 
             <dependency>
+                <groupId>com.algorithm.learn</groupId>
+                <artifactId>algs4</artifactId>
+                <version>1.0</version>
+            </dependency>
+
+            <dependency>
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
                 <version>${lombok-version}</version>

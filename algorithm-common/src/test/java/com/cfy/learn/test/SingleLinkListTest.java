@@ -1,10 +1,8 @@
 package com.cfy.learn.test;
 
-import com.cfy.learn.algorithm.base.link.SingleLinkList;
+import com.cfy.learn.algorithm.datastruct.link.SingleLinkList;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-
-import java.util.LinkedList;
 
 /**
  * @Description: TODO(这里用一句话描述这个类的作用)

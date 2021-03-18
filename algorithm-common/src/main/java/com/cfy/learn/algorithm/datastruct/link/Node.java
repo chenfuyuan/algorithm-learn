@@ -1,4 +1,4 @@
-package com.cfy.learn.algorithm.base.link;
+package com.cfy.learn.algorithm.datastruct.link;
 
 
 import lombok.Data;
@@ -15,5 +15,4 @@ public abstract class Node<T> {
      * 值
      */
     protected T value;
-
 }

@@ -56,7 +56,7 @@ import javax.swing.KeyStroke;
  *  or set the color of the specified pixel.
  *  The {@code getRGB()} and {@code setRGB()} methods use a 32-bit {@code int}
  *  to encode the color, thereby avoiding the need to create temporary
- *  {@code Color} objects. The red (R), green (G), and blue (B) components 
+ *  {@code Color} objects. The red (R), green (G), and blue (B) components
  *  are encoded using the least significant 24 bits.
  *  Given a 32-bit {@code int} encoding the color, the following code extracts
  *  the RGB components:
@@ -64,12 +64,12 @@ import javax.swing.KeyStroke;
  *  int r = (rgb &gt;&gt; 16) &amp; 0xFF;
  *  int g = (rgb &gt;&gt;  8) &amp; 0xFF;
  *  int b = (rgb &gt;&gt;  0) &amp; 0xFF;
- *  </pre></blockquote> 
+ *  </pre></blockquote>
  *  Given the RGB components (8-bits each) of a color,
  *  the following statement packs it into a 32-bit {@code int}:
  * <blockquote><pre>
  *  int rgb = (r &lt;&lt; 16) + (g &lt;&lt; 8) + (b &lt;&lt; 0);
- * </pre></blockquote> 
+ * </pre></blockquote>
  *  <p>
  *  A <em>W</em>-by-<em>H</em> picture uses ~ 4 <em>W H</em> bytes of memory,
  *  since the color of each pixel is encoded as a 32-bit <code>int</code>.
@@ -232,7 +232,7 @@ public final class Picture implements ActionListener {
 
     // getMenuShortcutKeyMask() deprecated in Java 10 but its replacement
     // getMenuShortcutKeyMaskEx() is not available in Java 8
-    @SuppressWarnings("deprecation") 
+    @SuppressWarnings("deprecation")
     public void show() {
 
         // create the GUI for viewing the image if needed
@@ -294,7 +294,7 @@ public final class Picture implements ActionListener {
     }
 
    /**
-     * Returns the color of pixel ({@code col}, {@code row}) as a {@link java.awt.Color}.
+     * Returns the color of pixel ({@code col}, {@code row}) as a {@link Color}.
      *
      * @param col the column index
      * @param row the row index

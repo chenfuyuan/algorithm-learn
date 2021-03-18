@@ -1,6 +1,6 @@
 package com.cfy.learn.test;
 
-import com.cfy.learn.algorithm.base.link.SingleNode;
+import com.cfy.learn.algorithm.datastruct.link.SingleNode;
 import com.uptool.core.util.EmptyUtil;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
