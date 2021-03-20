@@ -1,6 +1,6 @@
 package com.cfy.learn.test;
 
-import com.cfy.learn.algorithm.datastruct.link.BilateralLinkList;
+import com.cfy.learn.algorithm.datastruct.list.link.BilateralLinkList;
 import com.uptool.core.util.GenerateArrayUtil;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

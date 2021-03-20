@@ -1,6 +1,6 @@
 package com.cfy.learn.algorithm.base.bag;
 
-import com.cfy.learn.algorithm.datastruct.link.LinkedBag;
+import com.cfy.learn.algorithm.datastruct.bag.link.LinkedBag;
 import com.uptool.core.util.CalculateUtil;
 import com.uptool.core.util.NumberUtil;
 import edu.princeton.cs.algs4.StdIn;

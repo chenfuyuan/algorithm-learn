@@ -1,4 +1,4 @@
-package com.cfy.learn.algorithm.datastruct.link;
+package com.cfy.learn.algorithm.datastruct.common.link;
 
 import lombok.Data;
 

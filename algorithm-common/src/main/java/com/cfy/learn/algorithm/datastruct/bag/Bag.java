@@ -1,4 +1,4 @@
-package com.cfy.learn.algorithm.datastruct;
+package com.cfy.learn.algorithm.datastruct.bag;
 
 /**
  * @Description: 背包API

@@ -1,8 +1,8 @@
 package com.cfy.learn.algorithm.base;
 
-import com.cfy.learn.algorithm.datastruct.link.BilateralLinkList;
+import com.cfy.learn.algorithm.datastruct.list.link.BilateralLinkList;
 import com.cfy.learn.algorithm.base.link.ReversalUtil;
-import com.cfy.learn.algorithm.datastruct.link.SingleLinkList;
+import com.cfy.learn.algorithm.datastruct.list.link.SingleLinkList;
 import com.uptool.core.util.GenerateArrayUtil;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

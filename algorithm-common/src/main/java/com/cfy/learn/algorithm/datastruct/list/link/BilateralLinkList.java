@@ -1,4 +1,6 @@
-package com.cfy.learn.algorithm.datastruct.link;
+package com.cfy.learn.algorithm.datastruct.list.link;
+
+import com.cfy.learn.algorithm.datastruct.common.link.BilateralNode;
 
 import java.util.function.Consumer;
 

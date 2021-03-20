@@ -1,6 +1,8 @@
-package com.cfy.learn.algorithm.datastruct.link;
+package com.cfy.learn.algorithm.datastruct.bag.link;
 
-import com.cfy.learn.algorithm.datastruct.Bag;
+import com.cfy.learn.algorithm.datastruct.bag.Bag;
+import com.cfy.learn.algorithm.datastruct.common.link.LinkedIterator;
+import com.cfy.learn.algorithm.datastruct.common.link.SingleNode;
 
 import java.util.Iterator;
 
