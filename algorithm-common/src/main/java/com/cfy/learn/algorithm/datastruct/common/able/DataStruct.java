@@ -14,4 +14,9 @@ public interface DataStruct extends EmptyAble {
      * @return 元素个数
      */
     int size();
+
+    @Override
+    default boolean isEmpty() {
+        return size() <= 0;
+    }
 }

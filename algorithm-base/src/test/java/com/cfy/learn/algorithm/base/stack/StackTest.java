@@ -3,8 +3,13 @@ package com.cfy.learn.algorithm.base.stack;
 import com.cfy.learn.algorithm.constant.GlobalConstant;
 import com.cfy.learn.algorithm.datastruct.stack.array.FixCapacityStack;
 import com.cfy.learn.algorithm.datastruct.stack.array.FlexibleCapacityStack;
+import com.cfy.learn.algorithm.datastruct.stack.link.LinkedStack;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Stack;
 
 /**
  * @Description: 定容栈测试
@@ -64,5 +69,26 @@ public class StackTest {
         System.out.println(outputCache);
         System.out.println("栈内剩余元素个数:"+ stack.size());
         System.out.println("当前栈的容量为:"+stack.getCapacity());
+    }
+
+
+    @Test
+    public void testLinkedStack() {
+        LinkedStack<String> stack = new LinkedStack<>();
+        String[] splitStr = input.split(SPLIT);
+        StringBuilder outputCache = new StringBuilder();
+        for (String item : splitStr) {
+            if (!POP_FLAG.equals(item)) {
+                stack.push(item);
+                continue;
+            }
+
+            if (!stack.isEmpty()) {
+                outputCache.append(stack.pop() + SPLIT);
+            }
+        }
+
+        System.out.println(outputCache);
+        System.out.println("栈内剩余元素个数:"+ stack.size());
     }
 }

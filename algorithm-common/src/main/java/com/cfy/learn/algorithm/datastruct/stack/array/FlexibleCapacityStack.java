@@ -2,6 +2,9 @@ package com.cfy.learn.algorithm.datastruct.stack.array;
 
 import com.cfy.learn.algorithm.datastruct.stack.Stack;
 import com.uptool.core.util.ArrayUtil;
+
+import java.util.Iterator;
+
 /**
  * @Description:
  * @Author chenfuyuan

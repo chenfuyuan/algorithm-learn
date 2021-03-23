@@ -22,4 +22,22 @@ public class SingleNode<T> extends Node<T> {
     public SingleNode() {
     }
 
+    /**
+     * 根据数据生成一个节点，并插入下一个位置
+     * @param data 数据
+     */
+    public void insertNext(T data) {
+        SingleNode<T> nextNode = new SingleNode<>(data);
+        insertNext(nextNode);
+    }
+
+    /**
+     * 插入一个节点
+     * @param node 节点
+     */
+    public void insertNext(SingleNode<T> node) {
+        node.next = this.next;
+        this.next = node;
+    }
+
 }
