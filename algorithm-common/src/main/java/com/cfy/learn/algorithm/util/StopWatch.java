@@ -13,9 +13,6 @@ package com.cfy.learn.algorithm.util;
  ******************************************************************************/
 
 
-import com.cfy.learn.algorithm.util.stdlib.StdIn;
-import edu.princeton.cs.algs4.BinaryIn;
-
 /**
  *  The {@code Stopwatch} data type is for measuring
  *  the time that elapses between the start and end of a
