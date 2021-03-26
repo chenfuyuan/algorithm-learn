@@ -28,7 +28,7 @@ public class SortPerformanceTest {
      * @author chenfuyuan
      * @date 2021/3/25 16:01
      */
-    public int generateSize =10000;
+    public int generateSize =300000;
 
     /**
      * 循环次数
@@ -41,7 +41,7 @@ public class SortPerformanceTest {
     @BeforeEach
     public void init() {
         class01 = ShellSort.class;
-        class02 = InsertionBetterSort.class;
+        class02 = ShellBetterSort.class;
     }
 
     @Test

@@ -28,7 +28,8 @@ class SortTest {
         //SortClass = SelectionSort.class;    //选择排序
         //SortClass = InsertionSort.class;    //插入排序
         //SortClass = InsertionBetterSort.class;    //优化后的插入排序
-        SortClass = ShellSort.class;    //希尔排序
+        //SortClass = ShellSort.class;    //希尔排序
+        SortClass = ShellBetterSort.class;    //优化后的希尔排序
     }
 
     @Test

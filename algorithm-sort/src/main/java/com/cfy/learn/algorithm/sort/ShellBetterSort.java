@@ -3,12 +3,11 @@ package com.cfy.learn.algorithm.sort;
 import com.uptool.core.util.SortUtil;
 
 /**
- * @Description: 希尔排序
+ * @Description: 优化后的希尔排序
  * @Author: chenfuyuan
- * @Date: 2021/3/26 17:51
+ * @Date: 2021/3/26 19:13
  */
-public class ShellSort {
-
+public class ShellBetterSort {
     public static void sort(Comparable[] array) {
         int length = array.length;
         //根据递增序列生成h
@@ -24,9 +23,13 @@ public class ShellSort {
             //i初始值取h,跳过第一个子序列第一个元素
             for (int i = h; i < length; i++) {
                 //j>=h 保证数组不会越界
-                for (int j = i; j >=h && SortUtil.less(array[j], array[j - h]); j -= h) {
-                    SortUtil.exch(array, j, j - h);
+                Comparable temp = array[i];
+                int j = i;
+                for (; j >=h && SortUtil.less(temp, array[j - h]); j -= h) {
+                    array[j] = array[j-h];
                 }
+                array[j] = temp;
+
             }
             h /= 3;
         }
