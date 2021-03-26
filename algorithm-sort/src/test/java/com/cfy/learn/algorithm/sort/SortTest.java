@@ -2,6 +2,7 @@ package com.cfy.learn.algorithm.sort;
 
 import com.cfy.learn.algorithm.constant.GlobalConstant;
 import com.uptool.core.util.SortUtil;
+import jdk.nashorn.tools.Shell;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -26,7 +27,8 @@ class SortTest {
         sortArray = input.split(GlobalConstant.SPACE_SPLIT);
         //SortClass = SelectionSort.class;    //选择排序
         //SortClass = InsertionSort.class;    //插入排序
-        SortClass = InsertionBetterSort.class;    //优化后的插入排序
+        //SortClass = InsertionBetterSort.class;    //优化后的插入排序
+        SortClass = ShellSort.class;    //希尔排序
     }
 
     @Test
