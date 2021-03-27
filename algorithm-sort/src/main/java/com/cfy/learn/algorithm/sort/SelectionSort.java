@@ -1,5 +1,6 @@
 package com.cfy.learn.algorithm.sort;
 
+import com.uptool.core.util.ArrayUtil;
 import com.uptool.core.util.SortUtil;
 
 /**
@@ -16,12 +17,25 @@ public class SelectionSort extends SortUtil {
      * @param array 数组
      */
     public static void sort(Comparable[] array) {
+        sort(array, ArrayUtil.START_INDEX,array.length);
+    }
+
+    /**
+     * 给数组局部排序
+     * @param array 数组
+     * @param startIndex 起始位置
+     * @param length 结束位置
+     */
+    public static void sort(Comparable[] array,int startIndex,int length) {
+        int endIndex = SortUtil.getEndIndex(startIndex,array.length,length);
+
         if (array.length <= 1) {
             return;
         }
-        for (int i = 0, length = array.length; i < length; i++) {
+
+        for (int i = startIndex; i <= endIndex; i++) {
             int minIndex = i;    //用于保持当前遍历情况，最小值索引
-            for (int j = i + 1; j < length; j++) {
+            for (int j = i + 1; j <= endIndex; j++) {
                 if (less(array[j], array[minIndex])) {
                     minIndex = j;
                 }

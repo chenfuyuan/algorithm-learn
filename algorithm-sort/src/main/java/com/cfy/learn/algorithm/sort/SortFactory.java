@@ -31,4 +31,26 @@ public class SortFactory {
             e.printStackTrace();
         }
     }
+
+    public static void sort(String sortType, Comparable[] array,int low,int hight) {
+        try {
+            Class<?> sortClass = Class.forName(sortType);
+            sort(sortClass, array,low,hight);
+        } catch (ClassNotFoundException e) {
+            System.out.println("查询不到对应排序类");
+        }
+    }
+
+    public static void sort(Class<?> sortClass, Comparable[] array,int low,int hight) {
+        try {
+            Method sortMethod = sortClass.getDeclaredMethod("sort", Comparable[].class,int.class,int.class);
+            sortMethod.invoke(null,(Object)array,low,hight);
+        } catch (NoSuchMethodException e) {
+            System.out.println("排序类无排序方法");
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (InvocationTargetException e) {
+            e.printStackTrace();
+        }
+    }
 }

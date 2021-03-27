@@ -11,12 +11,23 @@ import com.uptool.core.util.SortUtil;
 public class MergeSort {
 
     /**
-     *
+     * 使用归并算法给数组局部排序
      * @param array
      */
     public static void sort(Comparable[] array) {
-        Comparable[] aux = new Comparable[array.length];
-        sort(array,aux,0,array.length-1);
+        sort(array,0,array.length);
+    }
+
+    /**
+     * 给数组局部排序
+     * @param array 数组
+     * @param startIndex 起始位置
+     * @param length 长度
+     */
+    public static void sort(Comparable[] array,int startIndex,int length) {
+        int endIndex = SortUtil.getEndIndex(startIndex, array.length, length);
+        Comparable[] aux = new Comparable[length];
+        sort(array,aux,startIndex,endIndex);
     }
 
 
@@ -27,19 +38,21 @@ public class MergeSort {
      * @param low 低索引
      * @param hight 高索引
      */
-    public static void sort(Comparable[] array, Comparable[] aux, int low, int hight) {
+    private static void sort(Comparable[] array, Comparable[] aux, int low, int hight) {
         if (hight <= low) {
             return;
         }
 
         int mid = low + (hight - low) / 2;
 
-        sort(array, aux, low, mid);    //排序左半部分
+        //排序左半部分
+        sort(array, aux, low, mid);
 
-        sort(array,aux,mid+1,hight);    //排序右半部分
+        //排序右半部分
+        sort(array,aux,mid+1,hight);
 
-        merge(array,aux,low,mid,hight);    //进行归并
-
+        //进行归并
+        merge(array,aux,low,mid,hight);
     }
 
 
@@ -54,7 +67,7 @@ public class MergeSort {
      * @param mid 中间
      * @param hight 高
      */
-    public static void merge(Comparable[] array, Comparable[] aux,int low, int mid, int hight) {
+    private static void merge(Comparable[] array, Comparable[] aux,int low, int mid, int hight) {
 
         int i = low;    //左边数组的索引
         int j = mid+1;   //右边数组的索引

@@ -17,17 +17,25 @@ class SortTest {
 
     private Class SortClass;
 
+    private Integer low;
+
+    private Integer length;
+
     @BeforeEach
     public void setUp() {
         //String input = "S O R T E X A M P L E";
         String input = "M E R G E S O R T E X A M P L E";
         sortArray = input.split(GlobalConstant.SPACE_SPLIT);
+        low = 0;
+        length = 3;
+
         //SortClass = SelectionSort.class;    //选择排序
         //SortClass = InsertionSort.class;    //插入排序
         //SortClass = InsertionBetterSort.class;    //优化后的插入排序
         //SortClass = ShellSort.class;    //希尔排序
         //SortClass = ShellBetterSort.class;    //优化后的希尔排序
-        SortClass = MergeSort.class;    //归并排序
+        //SortClass = MergeSort.class;    //归并排序
+        SortClass = ShellSort.class;
 
     }
 
@@ -35,11 +43,22 @@ class SortTest {
     public void testMain() {
         System.out.print("未排序前:");
         SortUtil.show(sortArray);
+        SortFactory.sort(SortClass,sortArray,low,length);
+        System.out.print("排序后:");
+        SortUtil.show(sortArray);
+
+        boolean result = SortUtil.isSorted(sortArray,low,length);
+        System.out.println("排序结果是否正确:"+(result?"正确":"错误"));
+
+
+        setUp();
+        System.out.print("未排序前:");
+        SortUtil.show(sortArray);
         SortFactory.sort(SortClass,sortArray);
         System.out.print("排序后:");
         SortUtil.show(sortArray);
 
-        boolean result = SortUtil.isSorted(sortArray);
+        result = SortUtil.isSorted(sortArray);
         System.out.println("排序结果是否正确:"+(result?"正确":"错误"));
     }
 
