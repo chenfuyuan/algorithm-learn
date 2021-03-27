@@ -2,13 +2,9 @@ package com.cfy.learn.algorithm.sort;
 
 import com.cfy.learn.algorithm.constant.GlobalConstant;
 import com.uptool.core.util.SortUtil;
-import jdk.nashorn.tools.Shell;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.util.Arrays;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * @Description: 排序测试类
