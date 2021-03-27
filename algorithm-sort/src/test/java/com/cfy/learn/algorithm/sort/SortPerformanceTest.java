@@ -28,7 +28,7 @@ public class SortPerformanceTest {
      * @author chenfuyuan
      * @date 2021/3/25 16:01
      */
-    public int generateSize =300000;
+    public int generateSize =3000000;
 
     /**
      * 循环次数
@@ -36,11 +36,11 @@ public class SortPerformanceTest {
      * @author chenfuyuan
      * @date 2021/3/25 16:01
      */
-    public int cycleSize = 10;
+    public int cycleSize = 1;
 
     @BeforeEach
     public void init() {
-        class01 = ShellSort.class;
+        class01 = MergeSort.class;
         class02 = ShellBetterSort.class;
     }
 
@@ -54,6 +54,7 @@ public class SortPerformanceTest {
             sortArray = RandomUtil.generateDoubleArray(generateSize);
             timeTotal01 += sortTime(class01);
             timeTotal02 += sortTime(class02);
+
         }
 
         StdOut.printf("算法1:%s is %.1f times;\n", class01.getSimpleName(), timeTotal01);
@@ -72,6 +73,9 @@ public class SortPerformanceTest {
      * @date 2021/3/25 15:55
      */
     private double sortTime(Class sortClass) {
+        if (sortClass == null) {
+            return 0d;
+        }
         Double[] cloneArray = sortArray.clone();
         Stopwatch timer = new Stopwatch();
         SortFactory.sort(sortClass, cloneArray);
