@@ -15,6 +15,10 @@ public interface DataStruct extends EmptyAble {
      */
     int size();
 
+    /**
+     * 判空
+     * @return 是否为空
+     */
     @Override
     default boolean isEmpty() {
         return size() <= 0;

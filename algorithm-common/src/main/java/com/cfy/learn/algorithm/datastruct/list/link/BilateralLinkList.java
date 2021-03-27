@@ -18,7 +18,7 @@ public class BilateralLinkList<T> {
     /**
      * 默认遍历操作
      */
-    private Consumer<T> DEFAULT_OPERATE = item -> System.out.print(item + " ");
+    private final Consumer<T> DEFAULT_OPERATE = item -> System.out.print(item + " ");
 
     private int size = 0;
     /**
@@ -91,7 +91,8 @@ public class BilateralLinkList<T> {
     public static class Builder<T> {
         private T[] array;
 
-        public Builder setValues(T... array) {
+        @SafeVarargs
+        public final Builder<T> setValues(T... array) {
             this.array = array;
             return this;
         }
@@ -99,7 +100,7 @@ public class BilateralLinkList<T> {
 
         public BilateralLinkList<T> build() {
             if (isEmpty(array)) {
-                buildEmptyList();
+                return buildEmptyList();
             }
 
             BilateralLinkList<T> result = new BilateralLinkList<>();

@@ -1,12 +1,14 @@
 package com.cfy.learn.algorithm.datastruct.common.link;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 /**
  * @Description: 单链表节点
  * @Author Vito.Chen
  * @Date 2021/2/12 10:53
  */
+@EqualsAndHashCode(callSuper = true)
 @Data
 public class SingleNode<T> extends Node<T> {
 

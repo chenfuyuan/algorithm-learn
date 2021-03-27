@@ -3,7 +3,6 @@ package com.cfy.learn.algorithm.datastruct.stack.array;
 import com.cfy.learn.algorithm.datastruct.stack.Stack;
 import com.uptool.core.util.ArrayUtil;
 
-import java.util.Iterator;
 
 /**
  * @Description:
@@ -15,6 +14,17 @@ public class FlexibleCapacityStack<T> implements Stack<T> {
      * 默认容量
      */
     private static final int DEFAULT_CAPACITY = 16;
+
+    /**
+     * 缩小系数(个数) 数组个数<数组长度*缩小系数(个数)时进行缩小数组
+     */
+    private static final double SHRINK_SIZE_FACTOR = 0.25;
+
+    /**
+     * 缩小系数(容量) 当满足数组缩小条件时，缩小的比例
+     */
+    private static final double SHRINK_CAPACITY_FACTOR = 0.5;
+
 
     /**
      * 存储内容
@@ -73,8 +83,8 @@ public class FlexibleCapacityStack<T> implements Stack<T> {
         }
         T result = array[--size];
         array[size] = null;
-        if (size > 0 && size == array.length / 4) {
-            resize(array.length / 2);
+        if (size > 0 && size == (int)(array.length * SHRINK_SIZE_FACTOR)) {
+            resize((int)(array.length * SHRINK_CAPACITY_FACTOR));
         }
         return result;
     }

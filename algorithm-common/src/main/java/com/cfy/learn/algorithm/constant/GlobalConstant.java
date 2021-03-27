@@ -7,5 +7,8 @@ package com.cfy.learn.algorithm.constant;
  */
 public class GlobalConstant {
 
+    /**
+     * 空格分割符
+     */
     public static final String SPACE_SPLIT = " ";
 }

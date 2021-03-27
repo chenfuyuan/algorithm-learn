@@ -27,7 +27,7 @@ public class FixCapacityStack<T> implements Stack<T> {
     /**
      * 容量
      */
-    private int capacity;
+    private final int capacity;
 
     public FixCapacityStack(int capacity) {
         this.capacity = capacity;
@@ -39,7 +39,7 @@ public class FixCapacityStack<T> implements Stack<T> {
         newInstance();
     }
 
-
+    @SuppressWarnings("unchecked")
     private void newInstance() {
         array = (T[]) new Object[capacity];
     }

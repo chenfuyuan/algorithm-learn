@@ -33,7 +33,7 @@ public class SingleLinkList<T> {
 
     /**
      * 获取头节点
-     * @return
+     * @return 头节点
      */
     public SingleNode<T> getHead() {
         return head;
@@ -41,7 +41,7 @@ public class SingleLinkList<T> {
 
     /**
      * 设置头节点
-     * @param head
+     * @param head 头节点
      */
     public void setHead(SingleNode<T> head) {
         this.head = head;
@@ -77,7 +77,8 @@ public class SingleLinkList<T> {
 
         private T[] array;
 
-        public Builder setValues(T... array) {
+        @SafeVarargs
+        public final Builder<T> setValues(T... array) {
             this.array = array;
             return this;
         }
@@ -86,7 +87,7 @@ public class SingleLinkList<T> {
             if (isEmpty(array)) {
                 return buildEmptyList();
             }
-            SingleLinkList<T> result = new SingleLinkList();
+            SingleLinkList<T> result = new SingleLinkList<>();
             result.size = array.length;
 
             SingleNode<T> head = new SingleNode<>(array[0]);
@@ -106,8 +107,8 @@ public class SingleLinkList<T> {
         /**
          * 构建空链表
          */
-        private SingleLinkList buildEmptyList() {
-            SingleLinkList result = new SingleLinkList();
+        private SingleLinkList<T> buildEmptyList() {
+            SingleLinkList<T> result = new SingleLinkList<>();
             result.size = 0;
             result.head = null;
             return result;

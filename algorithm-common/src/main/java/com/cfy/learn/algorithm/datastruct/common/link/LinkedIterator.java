@@ -14,7 +14,7 @@ public class LinkedIterator<Item> implements Iterator<Item> {
      */
     private SingleNode<Item> current;
 
-    public LinkedIterator(SingleNode first) {
+    public LinkedIterator(SingleNode<Item> first) {
         this.current = first;
     }
 
