@@ -41,7 +41,7 @@ public class SortPerformanceTest {
     @BeforeEach
     public void init() {
         class01 = MergeSort.class;
-        class02 = ShellBetterSort.class;
+        class02 = MergeBetterSort.class;
     }
 
     @Test

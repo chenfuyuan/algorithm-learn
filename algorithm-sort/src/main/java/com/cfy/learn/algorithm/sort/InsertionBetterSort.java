@@ -40,7 +40,7 @@ public class InsertionBetterSort {
             }
             Comparable temp = array[i];
             int j = i;
-            for (; j > 0 && less(temp, array[j-1]);) {
+            for (; j > startIndex && less(temp, array[j-1]);) {
                 array[j] = array[j - 1];
                 j--;
             }
