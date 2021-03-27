@@ -14,11 +14,11 @@ public class InsertionSort extends SortUtil {
     /**
      * 插入排序
      *
-     * @param array
+     * @param array 数组
      * @author chenfuyuan
      * @date 2021/3/25 14:48
      */
-    public static void sort(Comparable[] array) {
+    public static void sort(Comparable<?>[] array) {
         sort(array, ArrayUtil.START_INDEX,array.length);
     }
 
@@ -28,7 +28,7 @@ public class InsertionSort extends SortUtil {
      * @param startIndex 起始位置
      * @param length 排序长度
      */
-    public static void sort(Comparable[] array,int startIndex ,int length) {
+    public static void sort(Comparable<?>[] array,int startIndex ,int length) {
         int endIndex = SortUtil.getEndIndex(startIndex, array.length, length);
 
         for (int i = startIndex+1; i <= endIndex; i++) {

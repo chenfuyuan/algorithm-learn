@@ -16,7 +16,7 @@ public class SelectionSort extends SortUtil {
      *
      * @param array 数组
      */
-    public static void sort(Comparable[] array) {
+    public static void sort(Comparable<?>[] array) {
         sort(array, ArrayUtil.START_INDEX,array.length);
     }
 
@@ -26,7 +26,7 @@ public class SelectionSort extends SortUtil {
      * @param startIndex 起始位置
      * @param length 结束位置
      */
-    public static void sort(Comparable[] array,int startIndex,int length) {
+    public static void sort(Comparable<?>[] array,int startIndex,int length) {
         int endIndex = SortUtil.getEndIndex(startIndex,array.length,length);
 
         if (array.length <= 1) {
@@ -34,7 +34,8 @@ public class SelectionSort extends SortUtil {
         }
 
         for (int i = startIndex; i <= endIndex; i++) {
-            int minIndex = i;    //用于保持当前遍历情况，最小值索引
+            //用于保持当前遍历情况，最小值索引
+            int minIndex = i;
             for (int j = i + 1; j <= endIndex; j++) {
                 if (less(array[j], array[minIndex])) {
                     minIndex = j;

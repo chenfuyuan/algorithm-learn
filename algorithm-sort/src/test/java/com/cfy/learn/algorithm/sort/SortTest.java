@@ -1,6 +1,5 @@
 package com.cfy.learn.algorithm.sort;
 
-import com.cfy.learn.algorithm.constant.GlobalConstant;
 import com.uptool.core.util.ArrayUtil;
 import com.uptool.core.util.RandomUtil;
 import com.uptool.core.util.SortUtil;
@@ -17,25 +16,39 @@ import java.util.Arrays;
  */
 class SortTest {
 
+    /**
+     * 排序数组
+     */
     private String[] sortArray;
 
-    private Class SortClass;
+    /**
+     * 排序类
+     */
+    private Class<?> SortClass;
 
-    private Integer low;
 
+    /**
+     * 排序开始位置
+     */
+    private Integer startIndex;
+
+    /**
+     * 操作排序长度
+     */
     private Integer length;
 
+    /**
+     * 排序数组大小
+     */
     private static int sortArraySize = 1000;
 
     @BeforeEach
     public void setUp() {
-        //String input = "S O R T E X A M P L E";
-        /*String input = "T R L R B Y S F Q Z T R R K X J";
-        sortArray = input.split(GlobalConstant.SPACE_SPLIT);*/
+
 
         sortArray = RandomUtil.generateCapitalLetterArray(sortArraySize);
 
-        low = 0;
+        startIndex = 0;
         length = sortArray.length;
 
         //SortClass = SelectionSort.class;    //选择排序
@@ -44,7 +57,7 @@ class SortTest {
         //SortClass = ShellSort.class;    //希尔排序
         //SortClass = ShellBetterSort.class;    //优化后的希尔排序
         //SortClass = MergeSort.class;    //归并排序
-        SortClass = MergeBetterSort.class;
+        SortClass = MergeBetterSort.class;    //优化后的归并排序
 
     }
 
@@ -62,6 +75,10 @@ class SortTest {
         }
     }
 
+    /**
+     * 调用方法，针对整个数组进行排序
+     * @return 排序结果
+     */
     private boolean sortByAll() {
         String[] cloneArray = new String[sortArray.length];
         ArrayUtil.copy(sortArray,cloneArray);
@@ -74,14 +91,18 @@ class SortTest {
         return result;
     }
 
+    /**
+     * 调用方法，针对 startIndex开始length长度的数组进行排序
+     * @return 排序结果
+     */
     private boolean sortByIndex() {
         String[] cloneArray = new String[sortArray.length];
         ArrayUtil.copy(sortArray,cloneArray);
-        SortFactory.sort(SortClass,cloneArray,low,length);
+        SortFactory.sort(SortClass,cloneArray, startIndex,length);
         System.out.print("排序后:");
         SortUtil.show(cloneArray);
 
-        boolean result = SortUtil.isSorted(cloneArray,low,length);
+        boolean result = SortUtil.isSorted(cloneArray, startIndex,length);
         System.out.println("排序结果是否正确:"+(result?"正确":"错误"));
         return result;
     }

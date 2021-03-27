@@ -3,7 +3,7 @@ package com.cfy.learn.algorithm.sort;
 import com.uptool.core.util.ArrayUtil;
 import com.uptool.core.util.SortUtil;
 
-import java.util.ArrayList;
+
 import java.util.Arrays;
 
 /**
@@ -16,9 +16,9 @@ public class MergeBetterSort {
 
     /**
      * 使用归并算法给数组局部排序
-     * @param array
+     * @param array 排序数组
      */
-    public static void sort(Comparable[] array) {
+    public static void sort(Comparable<?>[] array) {
         sort(array,0,array.length);
     }
 
@@ -28,9 +28,9 @@ public class MergeBetterSort {
      * @param startIndex 起始位置
      * @param length 长度
      */
-    public static void sort(Comparable[] array,int startIndex,int length) {
+    public static void sort(Comparable<?>[] array,int startIndex,int length) {
         int endIndex = SortUtil.getEndIndex(startIndex, array.length, length);
-        Comparable[] aux = new Comparable[length];
+        Comparable<?>[] aux = new Comparable[length];
         sort(array,aux,startIndex,endIndex);
     }
 
@@ -42,7 +42,7 @@ public class MergeBetterSort {
      * @param low 低索引
      * @param hight 高索引
      */
-    private static void sort(Comparable[] array, Comparable[] aux, int low, int hight) {
+    private static void sort(Comparable<?>[] array, Comparable<?>[] aux, int low, int hight) {
         if (hight <= low) {
             return;
         }
@@ -51,7 +51,6 @@ public class MergeBetterSort {
 
         if (hight - low <= 15) {
             InsertionBetterSort.sort(array, low, hight-low+1);
-            return;
         }else{
             //排序左半部分
             sort(array, aux, low, mid);
@@ -66,13 +65,13 @@ public class MergeBetterSort {
 
     }
 
-    private static void check(Comparable[] array,int low,int hight) {
+    private static void check(Comparable<?>[] array,int low,int hight) {
         int length = hight - low+1;
         boolean result = SortUtil.isSorted(array, low, length);
         if (!result) {
             System.out.printf("子数组{%d->%d}排序错误:",low,hight);
             SortUtil.show(array, low, length);
-            Comparable[] clone = new Comparable[length];
+            Comparable<?>[] clone = new Comparable[length];
             ArrayUtil.copy(array,clone,low,hight-low+1,ArrayUtil.START_INDEX);
             Arrays.sort(clone);
             System.out.print("数组应该为:");
@@ -93,7 +92,7 @@ public class MergeBetterSort {
      * @param mid 中间
      * @param hight 高
      */
-    private static void merge(Comparable[] array, Comparable[] aux,int low, int mid, int hight) {
+    private static void merge(Comparable<?>[] array, Comparable<?>[] aux,int low, int mid, int hight) {
 
         int i = low;    //左边数组的索引
         int j = mid+1;   //右边数组的索引

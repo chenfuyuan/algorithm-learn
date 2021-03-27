@@ -2,8 +2,6 @@ package com.cfy.learn.algorithm.sort;
 
 import com.cfy.learn.algorithm.util.Stopwatch;
 import com.uptool.core.stdlib.StdOut;
-import com.uptool.core.util.CalculateUtil;
-import com.uptool.core.util.NumberUtil;
 import com.uptool.core.util.RandomUtil;
 import com.uptool.core.util.SortUtil;
 import org.junit.jupiter.api.BeforeEach;
@@ -16,10 +14,19 @@ import org.junit.jupiter.api.Test;
  */
 public class SortPerformanceTest {
 
-    private Class class01;
+    /**
+     * 排序类1
+     */
+    private Class<?> class01;
 
-    private Class class02;
+    /**
+     * 排序类2
+     */
+    private Class<?> class02;
 
+    /**
+     * 排序的数组
+     */
     private Double[] sortArray;
 
     /**
@@ -59,7 +66,7 @@ public class SortPerformanceTest {
 
         StdOut.printf("算法1:%s is %.1f times;\n", class01.getSimpleName(), timeTotal01);
         StdOut.printf("算法2:%s is %.1f times;\n", class02.getSimpleName(), timeTotal02);
-        Class fastSortClass = SortUtil.less(timeTotal01, timeTotal02) ? class01 : class02;
+        Class<?> fastSortClass = SortUtil.less(timeTotal01, timeTotal02) ? class01 : class02;
         StdOut.printf("算法:%s 较快;", fastSortClass.getSimpleName());
 
     }
@@ -72,7 +79,7 @@ public class SortPerformanceTest {
      * @author chenfuyuan
      * @date 2021/3/25 15:55
      */
-    private double sortTime(Class sortClass) {
+    private double sortTime(Class<?> sortClass) {
         if (sortClass == null) {
             return 0d;
         }

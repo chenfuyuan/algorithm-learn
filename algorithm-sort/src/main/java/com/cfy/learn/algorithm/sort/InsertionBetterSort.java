@@ -3,22 +3,22 @@ package com.cfy.learn.algorithm.sort;
 import com.uptool.core.util.ArrayUtil;
 import com.uptool.core.util.SortUtil;
 
-import static com.uptool.core.util.SortUtil.less;
+
 
 /**
  * @Description: 优化插入排序
  * @Author: chenfuyuan
  * @Date: 2021/3/25 16:23
  */
-public class InsertionBetterSort {
+public class InsertionBetterSort extends SortUtil {
     /**
      * 插入排序
      *
-     * @param array
+     * @param array 数组
      * @author chenfuyuan
      * @date 2021/3/25 14:48
      */
-    public static void sort(Comparable[] array) {
+    public static void sort(Comparable<?>[] array) {
         sort(array, ArrayUtil.START_INDEX,array.length);
     }
 
@@ -28,7 +28,7 @@ public class InsertionBetterSort {
      * @param startIndex 起始位置
      * @param length 开始位置
      */
-    public static void sort(Comparable[] array,int startIndex,int length) {
+    public static void sort(Comparable<?>[] array,int startIndex,int length) {
 
         int endIndex = SortUtil.getEndIndex(startIndex, array.length, length);
 
@@ -38,9 +38,9 @@ public class InsertionBetterSort {
             if (less(array[i - 1], array[i])) {
                 continue;
             }
-            Comparable temp = array[i];
+            Comparable<?> temp = array[i];
             int j = i;
-            for (; j > startIndex && less(temp, array[j-1]);) {
+            while (j > startIndex && less(temp, array[j-1])) {
                 array[j] = array[j - 1];
                 j--;
             }

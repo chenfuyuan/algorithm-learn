@@ -8,13 +8,13 @@ import com.uptool.core.util.SortUtil;
  * @Author: chenfuyuan
  * @Date: 2021/3/26 20:00
  */
-public class MergeSort {
+public class MergeSort extends SortUtil {
 
     /**
      * 使用归并算法给数组局部排序
-     * @param array
+     * @param array 数组
      */
-    public static void sort(Comparable[] array) {
+    public static void sort(Comparable<?>[] array) {
         sort(array,0,array.length);
     }
 
@@ -24,9 +24,9 @@ public class MergeSort {
      * @param startIndex 起始位置
      * @param length 长度
      */
-    public static void sort(Comparable[] array,int startIndex,int length) {
+    public static void sort(Comparable<?>[] array,int startIndex,int length) {
         int endIndex = SortUtil.getEndIndex(startIndex, array.length, length);
-        Comparable[] aux = new Comparable[length];
+        Comparable<?>[] aux = new Comparable[length];
         sort(array,aux,startIndex,endIndex);
     }
 
@@ -38,7 +38,7 @@ public class MergeSort {
      * @param low 低索引
      * @param hight 高索引
      */
-    private static void sort(Comparable[] array, Comparable[] aux, int low, int hight) {
+    private static void sort(Comparable<?>[] array, Comparable<?>[] aux, int low, int hight) {
         if (hight <= low) {
             return;
         }
@@ -67,7 +67,7 @@ public class MergeSort {
      * @param mid 中间
      * @param hight 高
      */
-    private static void merge(Comparable[] array, Comparable[] aux,int low, int mid, int hight) {
+    private static void merge(Comparable<?>[] array, Comparable<?>[] aux,int low, int mid, int hight) {
 
         int i = low;    //左边数组的索引
         int j = mid+1;   //右边数组的索引

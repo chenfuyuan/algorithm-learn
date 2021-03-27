@@ -8,15 +8,21 @@ import com.uptool.core.util.SortUtil;
  * @Author: chenfuyuan
  * @Date: 2021/3/26 17:51
  */
-public class ShellSort {
+public class ShellSort extends SortUtil {
+
+    /**
+     * 递增序列倍数
+     */
+    public static final int INCREMENT_MULTIPLE = 3;
 
     /**
      * 希尔排序
      * @param array 数组
      */
-    public static void sort(Comparable[] array) {
+    public static void sort(Comparable<?>[] array) {
         sort(array, ArrayUtil.START_INDEX,array.length);
     }
+
 
     /**
      * 希尔排序(局部排序,从startIndex开始，排序length个)
@@ -24,13 +30,14 @@ public class ShellSort {
      * @param startIndex 开始索引
      * @param length 排序长度
      */
-    public static void sort(Comparable[] array,int startIndex,int length) {
+    public static void sort(Comparable<?>[] array,int startIndex,int length) {
         int endIndex = SortUtil.getEndIndex(startIndex, array.length,length);
         //根据递增序列生成h
         //h = length/3
-        int h = 1;    //初始值修改为1,防止当数组长度为2时，不进行 递增序列的生成，直接结束
-        while (h < length / 3) {
-            h = 3 * h + 1;
+        //初始值修改为1,防止当数组长度为2时，不进行 递增序列的生成，直接结束
+        int h = 1;
+        while (h < length / INCREMENT_MULTIPLE) {
+            h = INCREMENT_MULTIPLE * h + 1;
         }
 
         //数组中，每间隔h个索引归为同一个子序列，针对各个子序列进行排序。保证子序列局部有序
@@ -43,7 +50,7 @@ public class ShellSort {
                     SortUtil.exch(array, j, j - h);
                 }
             }
-            h /= 3;
+            h /= INCREMENT_MULTIPLE;
         }
     }
 }
