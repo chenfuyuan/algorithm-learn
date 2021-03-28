@@ -1,5 +1,6 @@
 package com.cfy.learn.algorithm.sort;
 
+import com.uptool.core.stdlib.StdRandom;
 import com.uptool.core.util.ArrayUtil;
 import com.uptool.core.util.RandomUtil;
 import com.uptool.core.util.SortUtil;
@@ -40,7 +41,7 @@ class SortTest {
     /**
      * 排序数组大小
      */
-    private static int sortArraySize = 1000;
+    private static int sortArraySize = 16;
 
     @BeforeEach
     public void setUp() {
@@ -57,7 +58,8 @@ class SortTest {
         //SortClass = ShellSort.class;    //希尔排序
         //SortClass = ShellBetterSort.class;    //优化后的希尔排序
         //SortClass = MergeSort.class;    //归并排序
-        SortClass = MergeBetterSort.class;    //优化后的归并排序
+        //SortClass = MergeBetterSort.class;    //优化后的归并排序
+        SortClass = MergeUpSort.class;    //自顶向上的归并排序
 
     }
 
@@ -88,6 +90,11 @@ class SortTest {
 
         boolean result = SortUtil.isSorted(cloneArray);
         System.out.println("排序结果是否正确:"+(result?"正确":"错误"));
+        if (!result) {
+            Arrays.sort(sortArray);
+            System.out.print("排序正确的数组:");
+            SortUtil.show(sortArray);
+        }
         return result;
     }
 
@@ -101,9 +108,17 @@ class SortTest {
         SortFactory.sort(SortClass,cloneArray, startIndex,length);
         System.out.print("排序后:");
         SortUtil.show(cloneArray);
-
+        //ABFHHIMUVV
+        //BFMHAVIVHU
         boolean result = SortUtil.isSorted(cloneArray, startIndex,length);
         System.out.println("排序结果是否正确:"+(result?"正确":"错误"));
+        if (!result) {
+            String[] cloneRightArray = new String[length];
+            ArrayUtil.copy(sortArray,cloneRightArray,startIndex,length,ArrayUtil.START_INDEX);
+            Arrays.sort(cloneRightArray);
+            System.out.print("排序正确的数组:");
+            SortUtil.show(cloneRightArray);
+        }
         return result;
     }
 

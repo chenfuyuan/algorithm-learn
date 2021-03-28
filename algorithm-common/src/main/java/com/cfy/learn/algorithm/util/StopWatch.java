@@ -1,16 +1,4 @@
 package com.cfy.learn.algorithm.util;
-/******************************************************************************
- *  Compilation:  javac Stopwatch.java
- *  Execution:    java Stopwatch n
- *  Dependencies: none
- *
- *  A utility class to measure the running time (wall clock) of a program.
- *
- *  % java8 Stopwatch 100000000
- *  6.666667e+11  0.5820 seconds
- *  6.666667e+11  8.4530 seconds
- *
- ******************************************************************************/
 
 
 /**
@@ -21,8 +9,6 @@ package com.cfy.learn.algorithm.util;
  *  @author Robert Sedgewick
  *  @author Kevin Wayne
  */
-
-
 public class Stopwatch { 
 
     private final long start;
