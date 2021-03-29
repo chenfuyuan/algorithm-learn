@@ -7,15 +7,10 @@ import com.uptool.core.util.SortUtil;
  * @Author: chenfuyuan
  * @Date: 2021/3/28 14:47
  */
-public class MergeUpSort extends MergeAbstractSort {
+public class MergeUpSort extends AbstractMergeSort {
 
-    /**
-     * 使用归并算法给数组局部排序
-     * @param array 数组
-     */
-    public static<T> void sort(Comparable<T>[] array) {
-        sort(array,0,array.length);
-    }
+
+
 
     /**
      * 给数组局部排序

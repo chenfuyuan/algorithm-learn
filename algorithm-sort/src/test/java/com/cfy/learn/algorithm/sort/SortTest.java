@@ -4,6 +4,7 @@ import com.uptool.core.stdlib.StdRandom;
 import com.uptool.core.util.ArrayUtil;
 import com.uptool.core.util.RandomUtil;
 import com.uptool.core.util.SortUtil;
+import edu.princeton.cs.algs4.Quick;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -59,7 +60,7 @@ class SortTest {
         //SortClass = ShellBetterSort.class;    //优化后的希尔排序
         //SortClass = MergeSort.class;    //归并排序
         //SortClass = MergeBetterSort.class;    //优化后的归并排序
-        SortClass = MergeUpSort.class;    //自顶向上的归并排序
+        SortClass = QuickSort.class;    //自顶向上的归并排序
 
     }
 

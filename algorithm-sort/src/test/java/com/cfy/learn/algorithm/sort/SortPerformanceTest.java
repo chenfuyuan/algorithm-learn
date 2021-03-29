@@ -35,7 +35,7 @@ public class SortPerformanceTest {
      * @author chenfuyuan
      * @date 2021/3/25 16:01
      */
-    public int generateSize =3000000;
+    public int generateSize =100000;
 
     /**
      * 循环次数
@@ -43,12 +43,12 @@ public class SortPerformanceTest {
      * @author chenfuyuan
      * @date 2021/3/25 16:01
      */
-    public int cycleSize = 1;
+    public int cycleSize = 300;
 
     @BeforeEach
     public void init() {
-        class01 = MergeSort.class;
-        class02 = MergeBetterSort.class;
+        class01 = MergeBetterSort.class;
+        class02 = QuickSort.class;
     }
 
     @Test

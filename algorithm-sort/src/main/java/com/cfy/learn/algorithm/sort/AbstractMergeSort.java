@@ -8,7 +8,7 @@ import com.uptool.core.util.SortUtil;
  * @Author: chenfuyuan
  * @Date: 2021/3/28 15:05
  */
-public abstract class MergeAbstractSort extends SortUtil {
+public abstract class AbstractMergeSort extends SortUtil {
     /**
      * 对数组进行归并
      * 将数组 low->hight位置的数据，以mid为界，划分左右两边，对左右两个子数组进行合并

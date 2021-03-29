@@ -11,7 +11,7 @@ import java.util.Arrays;
  * @Author: chenfuyuan
  * @Date: 2021/3/27 21:29
  */
-public class MergeBetterSort extends MergeAbstractSort {
+public class MergeBetterSort extends AbstractMergeSort {
 
 
     /**
@@ -47,20 +47,18 @@ public class MergeBetterSort extends MergeAbstractSort {
             return;
         }
 
-        int mid = low + (hight - low) / 2;
-
         if (hight - low <= 15) {
-            InsertionBetterSort.sort(array, low, hight-low+1);
+            InsertionSort.sort(array, low, hight-low+1);
         }else{
+            int mid = low + (hight - low) / 2;
             //排序左半部分
             sort(array, aux, low, mid);
-            check(array,low,mid);
             //排序右半部分
             sort(array,aux,mid+1,hight);
-            check(array,mid+1,hight);
             //进行归并
-            merge(array,aux,low,mid,hight);
-            check(array,low,hight);
+            if (!less(array[mid], array[mid+1])) {
+                merge(array,aux,low,mid,hight);
+            }
         }
 
     }

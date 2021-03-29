@@ -1,6 +1,5 @@
 package com.cfy.learn.algorithm.sort;
 
-import com.uptool.core.util.ArrayUtil;
 import com.uptool.core.util.SortUtil;
 
 /**
@@ -8,7 +7,7 @@ import com.uptool.core.util.SortUtil;
  * @Author: chenfuyuan
  * @Date: 2021/3/26 20:00
  */
-public class MergeSort extends MergeAbstractSort {
+public class MergeSort extends AbstractMergeSort {
 
     /**
      * 使用归并算法给数组局部排序
