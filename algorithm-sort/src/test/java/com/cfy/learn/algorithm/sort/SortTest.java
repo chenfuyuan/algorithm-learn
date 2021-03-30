@@ -42,7 +42,7 @@ class SortTest {
     /**
      * 排序数组大小
      */
-    private static int sortArraySize = 16;
+    private static int sortArraySize = 36;
 
     @BeforeEach
     public void setUp() {
@@ -60,7 +60,7 @@ class SortTest {
         //SortClass = ShellBetterSort.class;    //优化后的希尔排序
         //SortClass = MergeSort.class;    //归并排序
         //SortClass = MergeBetterSort.class;    //优化后的归并排序
-        SortClass = QuickSort.class;    //自顶向上的归并排序
+        SortClass = QuickBetterSort.class;    //自顶向上的归并排序
 
     }
 

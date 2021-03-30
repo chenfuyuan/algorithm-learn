@@ -43,12 +43,12 @@ public class SortPerformanceTest {
      * @author chenfuyuan
      * @date 2021/3/25 16:01
      */
-    public int cycleSize = 300;
+    public int cycleSize = 100;
 
     @BeforeEach
     public void init() {
-        class01 = MergeBetterSort.class;
-        class02 = QuickSort.class;
+        class01 = QuickSort.class;
+        class02 = QuickBetterSort.class;
     }
 
     @Test
