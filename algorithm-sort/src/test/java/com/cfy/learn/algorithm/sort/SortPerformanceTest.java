@@ -27,7 +27,7 @@ public class SortPerformanceTest {
     /**
      * 排序的数组
      */
-    private Double[] sortArray;
+    private Comparable[] sortArray;
 
     /**
      * 生成数组大小
@@ -48,7 +48,7 @@ public class SortPerformanceTest {
     @BeforeEach
     public void init() {
         class01 = QuickSort.class;
-        class02 = QuickBetterSort.class;
+        class02 = QuickThreeWaySort.class;
     }
 
     @Test
@@ -58,7 +58,7 @@ public class SortPerformanceTest {
         double timeTotal02 = 0.0;
 
         for (int i = 0; i < cycleSize; i++) {
-            sortArray = RandomUtil.generateDoubleArray(generateSize);
+            sortArray = RandomUtil.generateCapitalLetterArray(generateSize);
             timeTotal01 += sortTime(class01);
             timeTotal02 += sortTime(class02);
 
@@ -83,7 +83,7 @@ public class SortPerformanceTest {
         if (sortClass == null) {
             return 0d;
         }
-        Double[] cloneArray = sortArray.clone();
+        Comparable[] cloneArray = sortArray.clone();
         Stopwatch timer = new Stopwatch();
         SortFactory.sort(sortClass, cloneArray);
         return timer.elapsedTime();

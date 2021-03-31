@@ -3,10 +3,10 @@ package com.cfy.learn.algorithm.sort;
 import com.uptool.core.stdlib.StdRandom;
 import com.uptool.core.util.SortUtil;
 
-import java.util.Comparator;
+
 
 /**
- * @Description: 三向切片快速排序
+ * @Description: 三向切片快速排序(适用于有重复组件的情况)
  * @Author: chenfuyuan
  * @Date: 2021/3/31 13:43
  */
