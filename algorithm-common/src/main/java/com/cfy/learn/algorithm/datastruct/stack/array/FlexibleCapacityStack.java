@@ -70,10 +70,8 @@ public class FlexibleCapacityStack<T> implements Stack<T> {
      * @param newCapacity 新容量
      */
     private void resize(int newCapacity) {
-        System.out.println("调整容量");
         array = ArrayUtil.resize(array, newCapacity);
         capacity = array.length;
-        System.out.println("调整后容量为"+capacity);
     }
 
     @Override
