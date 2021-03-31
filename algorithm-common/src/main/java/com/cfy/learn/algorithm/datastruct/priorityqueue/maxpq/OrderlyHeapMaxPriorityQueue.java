@@ -41,13 +41,21 @@ public class OrderlyHeapMaxPriorityQueue<Item extends Comparable<Item>> extends 
         this(DEFAULT_CAPACITY);
     }
 
+    /**
+     * 创建一个初始容量为capacity的优先队列
+     * @param capacity 容量
+     */
     public OrderlyHeapMaxPriorityQueue(int capacity) {
         //空出一个索引，方便后续父节点及子节点查找
         this.capacity = capacity;
-        heap = (Item[]) new Comparable[capacity + ROOT_NODE_INDEX];
+        heap = (Item[]) ArrayUtil.newArray(capacity + ROOT_NODE_INDEX, Comparable.class);
         size = 0;
     }
 
+    /**
+     * 将数组对象转化为优先队列
+     * @param elementArray 元素数组
+     */
     public OrderlyHeapMaxPriorityQueue(Item[] elementArray) {
         this(elementArray.length);
         for (Item element : elementArray) {
@@ -57,6 +65,7 @@ public class OrderlyHeapMaxPriorityQueue<Item extends Comparable<Item>> extends 
 
     @Override
     public void insert(Item element) {
+        //当数组元素个数大于等于容量时，进行扩容操作
         if (size >= capacity) {
             resize(capacity << 1);
         }
@@ -70,7 +79,6 @@ public class OrderlyHeapMaxPriorityQueue<Item extends Comparable<Item>> extends 
      * @param newCapacity 新容量
      */
     private void resize(int newCapacity) {
-        System.out.printf("进行容量调整,原容量{%d}->现容量{%d}\n",capacity,newCapacity);
         heap = ArrayUtil.resize(heap, newCapacity+ROOT_NODE_INDEX);
         capacity = newCapacity;
     }
@@ -83,10 +91,15 @@ public class OrderlyHeapMaxPriorityQueue<Item extends Comparable<Item>> extends 
 
     @Override
     public Item delMax() {
+        //获取根节点，并暂存
         Item result = max();
+        //交换根节点与最后哦节点的位置
         exch(ROOT_NODE_INDEX,size);
+        //释放空间
         heap[size--] = null;
+        //进行下浮操作
         sink(ROOT_NODE_INDEX);
+        //当数组元素个数 小于 容量乘以缩小比例时，进行缩容
         if (size <= capacity * SHRINK_SIZE_FACTOR) {
             resize(capacity>>1);
         }
