@@ -8,7 +8,7 @@ import com.uptool.core.util.SortUtil;
  * @Author: chenfuyuan
  * @Date: 2021/3/31 14:51
  */
-public abstract class HeapMaxPriorityQueue<Item extends Comparable<Item>> extends PriorityQueue<Item> {
+public abstract class HeapMaxPriorityQueue<Item extends Comparable<Item>> implements PriorityQueue<Item> {
 
     protected Item[] heap;
 
