@@ -9,6 +9,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
+import java.util.SortedSet;
 
 
 /**
@@ -60,8 +61,10 @@ class SortTest {
         //SortClass = ShellBetterSort.class;    //优化后的希尔排序
         //SortClass = MergeSort.class;    //归并排序
         //SortClass = MergeBetterSort.class;    //优化后的归并排序
-        SortClass = QuickBetterSort.class;    //自顶向上的归并排序
-
+        //SortClass = MergeUpSort.class;    //自顶向上的归并排序
+        //SortClass = QuickSort.class;    //快速排序
+        //SortClass = QuickBetterSort.class;    //取样快速排序
+        SortClass = QuickThreeWaySort.class;    //三向快速排序
     }
 
     @Test
