@@ -41,16 +41,16 @@ class SortTest {
     /**
      * 排序数组大小
      */
-    private static int sortArraySize = 10;
+    private static int sortArraySize = 12;
 
     @BeforeEach
     public void setUp() {
 
-        String input = "H A B C D E F G";
-        sortArray = input.split(GlobalConstant.SPACE_SPLIT);
-        //sortArray = RandomUtil.generateCapitalLetterArray(sortArraySize);
+        /*String input = "H A B C D E F G";
+        sortArray = input.split(GlobalConstant.SPACE_SPLIT);*/
+        sortArray = RandomUtil.generateCapitalLetterArray(sortArraySize);
 
-        startIndex = 2;
+        startIndex = 4;
         length = sortArray.length-startIndex;
 
         //SortClass = SelectionSort.class;    //选择排序
