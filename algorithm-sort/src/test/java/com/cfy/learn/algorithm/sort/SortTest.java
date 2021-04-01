@@ -1,6 +1,7 @@
 package com.cfy.learn.algorithm.sort;
 
 
+import com.cfy.learn.algorithm.constant.GlobalConstant;
 import com.uptool.core.util.ArrayUtil;
 import com.uptool.core.util.RandomUtil;
 import com.uptool.core.util.SortUtil;
@@ -45,12 +46,12 @@ class SortTest {
     @BeforeEach
     public void setUp() {
 
-//        String input = "K S U E P F M Q";
-//        sortArray = input.split(GlobalConstant.SPACE_SPLIT);
-        sortArray = RandomUtil.generateCapitalLetterArray(sortArraySize);
+        String input = "H A B C D E F G";
+        sortArray = input.split(GlobalConstant.SPACE_SPLIT);
+        //sortArray = RandomUtil.generateCapitalLetterArray(sortArraySize);
 
-        startIndex = 0;
-        length = sortArray.length;
+        startIndex = 2;
+        length = sortArray.length-startIndex;
 
         //SortClass = SelectionSort.class;    //选择排序
         //SortClass = InsertionSort.class;    //插入排序
@@ -70,10 +71,10 @@ class SortTest {
     public void testMain() {
         System.out.print("需要排序的数组:");
         SortUtil.show(sortArray);
-        /*boolean resultIndex = sortByIndex();
-        System.out.println("====================================");*/
+        boolean resultIndex = sortByIndex();
+        System.out.println("====================================");
         boolean resultAll = sortByAll();
-        if (/*!resultIndex || */!resultAll) {
+        if (!resultIndex || !resultAll) {
             Arrays.sort(sortArray);
             System.out.print("排序正确的数组:");
             SortUtil.show(sortArray);
