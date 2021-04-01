@@ -1,16 +1,13 @@
 package com.cfy.learn.algorithm.sort;
 
-import com.uptool.core.stdlib.StdRandom;
+
 import com.uptool.core.util.ArrayUtil;
 import com.uptool.core.util.RandomUtil;
 import com.uptool.core.util.SortUtil;
-import edu.princeton.cs.algs4.Quick;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
-import java.util.SortedSet;
-
 
 /**
  * @Description: 排序测试类
@@ -43,12 +40,13 @@ class SortTest {
     /**
      * 排序数组大小
      */
-    private static int sortArraySize = 36;
+    private static int sortArraySize = 10;
 
     @BeforeEach
     public void setUp() {
 
-
+//        String input = "K S U E P F M Q";
+//        sortArray = input.split(GlobalConstant.SPACE_SPLIT);
         sortArray = RandomUtil.generateCapitalLetterArray(sortArraySize);
 
         startIndex = 0;
@@ -64,17 +62,18 @@ class SortTest {
         //SortClass = MergeUpSort.class;    //自顶向上的归并排序
         //SortClass = QuickSort.class;    //快速排序
         //SortClass = QuickBetterSort.class;    //取样快速排序
-        SortClass = QuickThreeWaySort.class;    //三向快速排序
+        //SortClass = QuickThreeWaySort.class;    //三向快速排序
+        SortClass = HeapSort.class;    //堆排序
     }
 
     @Test
     public void testMain() {
         System.out.print("需要排序的数组:");
         SortUtil.show(sortArray);
-        boolean resultIndex = sortByIndex();
-        System.out.println("====================================");
+        /*boolean resultIndex = sortByIndex();
+        System.out.println("====================================");*/
         boolean resultAll = sortByAll();
-        if (!resultIndex || !resultAll) {
+        if (/*!resultIndex || */!resultAll) {
             Arrays.sort(sortArray);
             System.out.print("排序正确的数组:");
             SortUtil.show(sortArray);
