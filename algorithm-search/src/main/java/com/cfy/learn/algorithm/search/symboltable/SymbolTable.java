@@ -1,11 +1,13 @@
 package com.cfy.learn.algorithm.search.symboltable;
 
+import com.cfy.learn.algorithm.datastruct.common.able.DataStruct;
+
 /**
  * @Description: 符号表API
  * @Author: chenfuyuan
  * @Date: 2021/4/2 16:50
  */
-public interface SymbolTable<Key, Value>{
+public interface SymbolTable<Key, Value> extends DataStruct {
 
     /**
      * 将键值对存入表中(若值为空则将键key从表中删除)
@@ -34,17 +36,6 @@ public interface SymbolTable<Key, Value>{
      */
     boolean contains(Key key);
 
-    /**
-     * 表是否为空
-     * @return 是否为空
-     */
-    boolean isEmpty();
-
-    /**
-     * 表中键值对数量
-     * @return 键值对数量
-     */
-    int size();
 
     /**
      * 表中所有键的集合
