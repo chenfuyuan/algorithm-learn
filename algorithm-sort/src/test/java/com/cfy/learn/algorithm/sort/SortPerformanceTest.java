@@ -48,7 +48,7 @@ public class SortPerformanceTest {
     @BeforeEach
     public void init() {
         class01 = QuickSort.class;
-        class02 = QuickThreeWaySort.class;
+        class02 = HeapSort.class;
     }
 
     @Test

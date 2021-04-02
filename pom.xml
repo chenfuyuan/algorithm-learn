@@ -12,6 +12,7 @@
         <module>algorithm-common</module>
         <module>algorithm-base</module>
         <module>algorithm-sort</module>
+        <module>algorithm-search</module>
     </modules>
 
     <properties>
