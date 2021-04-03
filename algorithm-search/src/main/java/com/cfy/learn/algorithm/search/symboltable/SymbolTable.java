@@ -11,6 +11,8 @@ public interface SymbolTable<Key, Value> extends DataStruct {
 
     /**
      * 将键值对存入表中(若值为空则将键key从表中删除)
+     * 当键已经存在时，会使用新建替代旧键
+     * 键不能为空
      * @param key 键
      * @param value 值
      */
