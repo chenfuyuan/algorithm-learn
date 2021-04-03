@@ -12,7 +12,25 @@ public interface OrderlySymbolTable<Key extends Comparable<Key>, Value> extends 
      * @return 键的集合迭代器
      */
     @Override
-    Iterable<Key> keys();
+    default Iterable<Key> keys(){
+        return keys(min(), max());
+    }
+
+    /**
+     * [low..hight]之间键的数量
+     * @param low low索引
+     * @param hight hight索引
+     * @return [low..hight]之间键的数量
+     */
+    default int size(Key low,Key hight){
+        if (hight.compareTo(low) < 0) {
+            return 0;
+        } else if (contains(hight)) {
+            return rank(hight) - rank(low) + 1;
+        } else {
+            return rank(hight) - rank(low);
+        }
+    }
 
     /**
      * [low..hight]之间的所有键，已排序
@@ -22,14 +40,6 @@ public interface OrderlySymbolTable<Key extends Comparable<Key>, Value> extends 
      */
     Iterable<Key> keys(Key low,Key hight);
 
-
-    /**
-     * [low..hight]之间键的数量
-     * @param low
-     * @param hight
-     * @return
-     */
-    int size(Key low,Key hight);
 
     /**
      * 最小的键
@@ -42,6 +52,20 @@ public interface OrderlySymbolTable<Key extends Comparable<Key>, Value> extends 
      * @return 最大的键
      */
     Key max();
+
+    /**
+     * 删除最小的键
+     */
+    default void deleteMin(){
+        delete(min());
+    }
+
+    /**
+     * 删除最大的键
+     */
+    default void deleteMax(){
+        delete(max());
+    }
 
     /**
      * 小于等于key的最大键
@@ -72,13 +96,5 @@ public interface OrderlySymbolTable<Key extends Comparable<Key>, Value> extends 
      */
     Key select(int sortIndex);
 
-    /**
-     * 删除最小的键
-     */
-    void deleteMin();
 
-    /**
-     * 删除最大的键
-     */
-    void deleteMax();
 }
