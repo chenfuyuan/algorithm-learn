@@ -7,11 +7,11 @@ import org.junit.jupiter.api.BeforeEach;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * @Description: 符号表测试
+ * @Description: 符号表行为测试用例
  * @Author: chenfuyuan
  * @Date: 2021/4/3 14:33
  */
-public class SymbolTableTest {
+public class SymbolTableActionTest {
 
 
     /**
@@ -25,7 +25,7 @@ public class SymbolTableTest {
     private String[] inputArray;
 
     @BeforeEach
-    void setUp() {
+    void init() {
         //symbolTable = new ;
         String input = "S E A R C H E X A M P L E";
         inputArray = input.split(GlobalConstant.SPACE_SPLIT);
