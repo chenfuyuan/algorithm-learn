@@ -1,8 +1,10 @@
 package com.cfy.learn.algorithm.search.symboltable;
 
 import com.cfy.learn.algorithm.constant.GlobalConstant;
+import com.cfy.learn.algorithm.search.symboltable.impl.SequentialSearchSymbolTable;
 import com.uptool.core.stdlib.StdOut;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -26,11 +28,13 @@ public class SymbolTableActionTest {
 
     @BeforeEach
     void init() {
-        //symbolTable = new ;
         String input = "S E A R C H E X A M P L E";
         inputArray = input.split(GlobalConstant.SPACE_SPLIT);
+
+        symbolTable = new SequentialSearchSymbolTable<>();
     }
 
+    @Test
     public void testMain() {
         //填入符号表中
         for (int i = 0; i < inputArray.length; i++) {
