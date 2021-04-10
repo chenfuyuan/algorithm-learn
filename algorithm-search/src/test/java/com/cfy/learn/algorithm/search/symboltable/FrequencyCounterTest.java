@@ -2,6 +2,7 @@ package com.cfy.learn.algorithm.search.symboltable;
 
 import com.cfy.learn.algorithm.constant.GlobalConstant;
 import com.cfy.learn.algorithm.search.symboltable.impl.SequentialSearchSymbolTable;
+import com.cfy.learn.algorithm.util.Stopwatch;
 import com.uptool.core.stdlib.StdIn;
 import com.uptool.core.stdlib.StdOut;
 import org.junit.jupiter.api.BeforeEach;
@@ -11,7 +12,7 @@ import org.junit.jupiter.api.BeforeEach;
  * @Author: chenfuyuan
  * @Date: 2021/4/3 14:40
  */
-public class SymbolTablePerformanceTest {
+public class FrequencyCounterTest {
 
     /**
      * 符号表
@@ -29,6 +30,7 @@ public class SymbolTablePerformanceTest {
     public static void main(String[] args) {
         int minlen = Integer.parseInt(args[0]);
         init();
+        Stopwatch stopwatch = new Stopwatch();
         while (!StdIn.isEmpty()) {
             //构造符号表并统计频率
             String word = StdIn.readString();
@@ -44,7 +46,9 @@ public class SymbolTablePerformanceTest {
                 symbolTable.put(word,symbolTable.get(word)+1);
             }
         }
-
+        System.out.println("构建符号表花费:"+stopwatch.elapsedTime());
+        System.out.println("符号表大小为:"+symbolTable.size());
+        stopwatch = new Stopwatch();
         //找出出现频率最高的单词
         String max = " ";
 
@@ -56,6 +60,7 @@ public class SymbolTablePerformanceTest {
         }
 
         StdOut.println(max + GlobalConstant.SPACE_SPLIT + symbolTable.get(max));
+        System.out.println("找出频率出现最多的单词花费:"+stopwatch.elapsedTime());
     }
 
 
