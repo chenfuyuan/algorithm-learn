@@ -3,13 +3,12 @@ package com.cfy.learn.algorithm.search.symboltable.impl;
 
 import com.cfy.learn.algorithm.datastruct.common.exception.DataStructEmptyException;
 import com.cfy.learn.algorithm.datastruct.common.link.KeyLinkedIterator;
-import com.cfy.learn.algorithm.datastruct.common.link.LinkedIterator;
 import com.cfy.learn.algorithm.datastruct.common.link.SingleKeyNode;
 import com.cfy.learn.algorithm.search.symboltable.SymbolTable;
 import com.uptool.core.Exception.ArgumentEmptyException;
 import com.uptool.core.util.EmptyUtil;
 
-import java.util.Iterator;
+
 
 /**
  * @Description: 链表实现的符号表

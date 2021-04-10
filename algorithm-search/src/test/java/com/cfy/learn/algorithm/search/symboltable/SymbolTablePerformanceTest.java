@@ -1,6 +1,7 @@
 package com.cfy.learn.algorithm.search.symboltable;
 
 import com.cfy.learn.algorithm.constant.GlobalConstant;
+import com.cfy.learn.algorithm.search.symboltable.impl.SequentialSearchSymbolTable;
 import com.uptool.core.stdlib.StdIn;
 import com.uptool.core.stdlib.StdOut;
 import org.junit.jupiter.api.BeforeEach;
@@ -22,6 +23,7 @@ public class SymbolTablePerformanceTest {
      */
     private static void init() {
         //初始化符号表
+        symbolTable = new SequentialSearchSymbolTable<>();
     }
 
     public static void main(String[] args) {

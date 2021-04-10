@@ -15,7 +15,7 @@ public class SymbolTableFactory {
      * @throws IllegalAccessException 参数错误
      * @throws InstantiationException 实例化错误
      */
-    public SymbolTable getSymbolTable(String className) throws ClassNotFoundException, IllegalAccessException, InstantiationException {
+    public static SymbolTable getSymbolTable(String className) throws ClassNotFoundException, IllegalAccessException, InstantiationException {
             Class<?> symbolTableClass = Class.forName(className);
             return (SymbolTable) symbolTableClass.newInstance();
     }
@@ -27,7 +27,7 @@ public class SymbolTableFactory {
      * @throws IllegalAccessException 参数错误
      * @throws InstantiationException 实例化错误
      */
-    public SymbolTable getSymbolTable(Class<SymbolTable> classType) throws IllegalAccessException, InstantiationException {
+    public static SymbolTable getSymbolTable(Class<SymbolTable> classType) throws IllegalAccessException, InstantiationException {
         return classType.newInstance();
     }
 
