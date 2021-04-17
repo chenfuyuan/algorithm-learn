@@ -1,8 +1,11 @@
 package com.cfy.learn.algorithm.datastruct.queue.linked;
 
 import com.cfy.learn.algorithm.datastruct.common.exception.DataStructEmptyException;
+import com.cfy.learn.algorithm.datastruct.common.link.LinkedIterator;
 import com.cfy.learn.algorithm.datastruct.common.link.SingleNode;
 import com.cfy.learn.algorithm.datastruct.queue.Queue;
+
+import java.util.Iterator;
 
 /**
  * @Description: 链表实现队列
@@ -71,5 +74,11 @@ public class LinkedQueue<Item> implements Queue<Item> {
     @Override
     public boolean isEmpty() {
         return first==null;
+    }
+
+
+    @Override
+    public Iterator<Item> iterator() {
+        return new LinkedIterator<>(first);
     }
 }

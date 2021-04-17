@@ -1,6 +1,8 @@
 package com.cfy.learn.algorithm.search.symboltable.impl;
 
 import com.cfy.learn.algorithm.datastruct.common.able.ArrayDataStruct;
+import com.cfy.learn.algorithm.datastruct.queue.Queue;
+import com.cfy.learn.algorithm.datastruct.queue.linked.LinkedQueue;
 import com.cfy.learn.algorithm.search.symboltable.OrderlySymbolTable;
 import com.uptool.core.util.ArrayUtil;
 import com.uptool.core.util.CompareUtil;
@@ -56,37 +58,64 @@ public class BinarySearchSymbolTable<Key extends Comparable<Key>, Value> impleme
 
     @Override
     public Iterable<Key> keys(Key low, Key hight) {
-        return null;
+        Queue<Key> queue = new LinkedQueue<>();
+
+        int endFlag = rank(hight);
+        for (int i = rank(low); i < rank(hight); i++) {
+            queue.enqueue(keys[i]);
+        }
+        if (contains(hight)) {
+            queue.enqueue(keys[endFlag]);
+        }
+
+        return queue;
     }
 
     @Override
     public Key min() {
-        return null;
+        return keys[0];
     }
 
     @Override
     public Key max() {
-        return null;
+        return keys[size-1];
     }
 
     @Override
     public Key floor(Key key) {
-        return null;
+        return keys[rank(key) - 1];
     }
 
     @Override
     public Key ceiling(Key key) {
-        return null;
+        return keys[rank(key)];
     }
 
+    /**
+     * 使用二分查找法进行查询
+     * @param key 键
+     * @return 符合索引
+     */
     @Override
     public int rank(Key key) {
-        return 0;
+        int low = 0, hight = size - 1;
+        while (low <= hight) {
+            int mid = low + (hight - low) / 2;
+            int cmp = keys[mid].compareTo(key);
+            if (cmp > 0) {
+                hight = mid - 1;
+            } else if (cmp < 0) {
+                low = mid + 1;
+            } else {
+                return mid;
+            }
+        }
+        return low;
     }
 
     @Override
     public Key select(int sortIndex) {
-        return null;
+        return keys[sortIndex-1];
     }
 
     /**
@@ -114,10 +143,11 @@ public class BinarySearchSymbolTable<Key extends Comparable<Key>, Value> impleme
 
         //找到合适的位置进行插入
         //array[rank]的数组向后移动一格
-        ArrayUtil.offset(keys, rank, OFFSET_ONE);
+        ArrayUtil.offset(keys, rank, OFFSET_ONE,size-1);
         keys[rank] = key;
-        ArrayUtil.offset(vals, rank, OFFSET_ONE);
+        ArrayUtil.offset(vals, rank, OFFSET_ONE,size-1);
         vals[rank] = value;
+        size++;
     }
 
 
@@ -125,6 +155,7 @@ public class BinarySearchSymbolTable<Key extends Comparable<Key>, Value> impleme
      * 调整数组大小
      */
     private void resize() {
+        System.out.println("扩容容量->"+capacity);
         keys = ArrayUtil.resize(keys, capacity);
         vals = ArrayUtil.resize(vals, capacity);
     }
@@ -175,10 +206,10 @@ public class BinarySearchSymbolTable<Key extends Comparable<Key>, Value> impleme
             return;
         }
 
-        ArrayUtil.offset(keys, rank - 1, -OFFSET_ONE);
+        ArrayUtil.offset(keys, rank - 1, -OFFSET_ONE,size-1);
         //初始化末尾元素
         keys[size - 1] = null;
-        ArrayUtil.offset(vals, rank - 1, -OFFSET_ONE);
+        ArrayUtil.offset(vals, rank - 1, -OFFSET_ONE,size-1);
         //初始化末尾元素
         vals[size--] = null;
 

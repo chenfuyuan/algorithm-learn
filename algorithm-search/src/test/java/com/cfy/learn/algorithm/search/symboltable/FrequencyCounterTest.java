@@ -1,6 +1,7 @@
 package com.cfy.learn.algorithm.search.symboltable;
 
 import com.cfy.learn.algorithm.constant.GlobalConstant;
+import com.cfy.learn.algorithm.search.symboltable.impl.BinarySearchSymbolTable;
 import com.cfy.learn.algorithm.search.symboltable.impl.SequentialSearchSymbolTable;
 import com.cfy.learn.algorithm.util.Stopwatch;
 import com.uptool.core.stdlib.StdIn;
@@ -24,7 +25,7 @@ public class FrequencyCounterTest {
      */
     private static void init() {
         //初始化符号表
-        symbolTable = new SequentialSearchSymbolTable<>();
+        symbolTable = new BinarySearchSymbolTable<>();
     }
 
     public static void main(String[] args) {

@@ -7,7 +7,7 @@ import com.cfy.learn.algorithm.datastruct.common.able.DataStruct;
  * @Author chenfuyuan
  * @Date 2021/3/23 15:37
  */
-public interface Queue<Item> extends DataStruct {
+public interface Queue<Item> extends DataStruct,Iterable<Item> {
 
     /**
      * 入队

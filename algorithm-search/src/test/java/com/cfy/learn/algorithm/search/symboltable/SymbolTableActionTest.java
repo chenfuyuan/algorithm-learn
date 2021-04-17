@@ -1,6 +1,7 @@
 package com.cfy.learn.algorithm.search.symboltable;
 
 import com.cfy.learn.algorithm.constant.GlobalConstant;
+import com.cfy.learn.algorithm.search.symboltable.impl.BinarySearchSymbolTable;
 import com.cfy.learn.algorithm.search.symboltable.impl.SequentialSearchSymbolTable;
 import com.uptool.core.stdlib.StdOut;
 import org.junit.jupiter.api.BeforeEach;
@@ -31,7 +32,7 @@ public class SymbolTableActionTest {
         String input = "S E A R C H E X A M P L E";
         inputArray = input.split(GlobalConstant.SPACE_SPLIT);
 
-        symbolTable = new SequentialSearchSymbolTable<>();
+        symbolTable = new BinarySearchSymbolTable<>();
     }
 
     @Test
