@@ -38,16 +38,38 @@ public class BinaryTreeSearchSymbolTableTest {
         check(symbolTable);
 
         //testGet
+        //testGet();
+
+
+        //testDelete
+        /*symbolTable.delete("E");
+        check(symbolTable);*/
+
+        //testMinAndMax
+        testMinAndMax();
+
+        testFloor();
+    }
+
+    private void testGet() {
         for (int i = 0; i < inputArray.length; i++) {
             int index = symbolTable.get(inputArray[i]);
             System.out.printf("key{%s}=%d\n",inputArray[i],index);
         }
+    }
 
-        //testDelete
-        symbolTable.delete("E");
-        check(symbolTable);
+    private void testFloor() {
+        System.out.println("floor(S) = "+symbolTable.floor("S"));
+        System.out.println("floor(A) = "+symbolTable.floor("A"));
+        System.out.println("floor(C) = "+symbolTable.floor("C"));
+        System.out.println("floor(D) = "+symbolTable.floor("D"));
+        System.out.println("floor(Y) = "+symbolTable.floor("Y"));
+        System.out.println("floor(T) = "+symbolTable.floor("T"));
+    }
 
-
+    private void testMinAndMax() {
+        System.out.printf("min=%s\n",symbolTable.min());
+        System.out.printf("max=%s\n",symbolTable.max());
     }
 
     private void check(BinaryTreeSearchSymbolTable<String, Integer> symbolTable) {

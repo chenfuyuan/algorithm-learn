@@ -4,7 +4,7 @@ import com.cfy.learn.algorithm.datastruct.common.link.BinaryTreeKeyNode;
 import com.cfy.learn.algorithm.search.symboltable.OrderlySymbolTable;
 import com.uptool.core.util.CompareUtil;
 import com.uptool.core.util.EmptyUtil;
-import com.uptool.core.util.NumberUtil;
+
 
 /**
  * @Description: 二叉查找树实现的符号表
@@ -26,17 +26,85 @@ public class BinaryTreeSearchSymbolTable<Key extends Comparable<Key>,Value> impl
 
     @Override
     public Key min() {
+        if (root != null) {
+            return minNode(root).getKey();
+        }
         return null;
+    }
+
+
+    /**
+     * 返回最小节点
+     * @param node 根节点
+     * @return 最小节点
+     */
+    private BinaryTreeKeyNode<Key,Value> minNode(BinaryTreeKeyNode<Key,Value> node) {
+        if (node.getLeft() == null) {
+            return node;
+        }
+
+        return minNode(node.getLeft());
     }
 
     @Override
     public Key max() {
+        if (root != null) {
+            return maxNode(root).getKey();
+        }
         return null;
+    }
+
+    /**
+     * 返回最大节点
+     * @param node 节点
+     * @return 最大节点
+     */
+    private BinaryTreeKeyNode<Key, Value> maxNode(BinaryTreeKeyNode<Key, Value> node) {
+        if (node.getRight() == null) {
+            return node;
+        }
+
+        return maxNode(node.getRight());
     }
 
     @Override
     public Key floor(Key key) {
-        return null;
+        return getKey(floorNode(root, key));
+    }
+
+    private Key getKey(BinaryTreeKeyNode<Key,Value> node) {
+        if (node == null) {
+            return null;
+        }
+        return node.getKey();
+    }
+
+    /**
+     * 小于等于key的最大键
+     * 当key小于根节点时，一定出现在左子树上
+     * 当key大于根节点时，一定出现在右子树或根上
+     * @param node 根节点
+     * @param key 键
+     * @return 小于等于key的最大键
+     */
+    private BinaryTreeKeyNode<Key,Value> floorNode(BinaryTreeKeyNode<Key,Value> node,Key key) {
+        if (node == null) {
+            return null;
+        }
+
+        if (CompareUtil.equal(node.getKey(), key)) {
+            return node;
+        }
+
+        if (CompareUtil.less(key, node.getKey())) {
+            return floorNode(node.getLeft(), key);
+        } else {
+            BinaryTreeKeyNode<Key, Value> result = floorNode(node.getRight(), key);
+            if (result == null) {
+                return node;
+            }
+            return CompareUtil.less(result.getKey(), key) ? result : node;
+        }
     }
 
     @Override
