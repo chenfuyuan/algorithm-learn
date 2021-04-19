@@ -49,14 +49,9 @@ public class BinaryTreeKeyNode<Key,Value> extends KeyNode<Key,Value>{
      * @param node 插入节点
      */
     public void insertLeft(BinaryTreeKeyNode<Key, Value> node) {
-        node.left = left;
+        assert left == null;
         left = node;
-        this.size++;
-        if (node.left != null) {
-            node.size = node.left.size + 1;
-        } else {
-            node.size = 0;
-        }
+        this.size+=node.size;
     }
 
     /**
@@ -74,20 +69,37 @@ public class BinaryTreeKeyNode<Key,Value> extends KeyNode<Key,Value>{
      * @param node 插入节点
      */
     public void insertRight(BinaryTreeKeyNode<Key, Value> node) {
-        node.right = right;
+        assert right == null;
         right = node;
-        this.size++;
-        if (node.right != null) {
-            node.size = node.right.size + 1;
-        }
+        this.size+=node.size;
     }
 
     /**
      * size递增
      */
-    public void increaseSize() {
+    public void addSize() {
         size++;
     }
 
+    /**
+     * size递减
+     */
+    public void deleteSize() {
+        size--;
+    }
 
+
+    /**
+     * 重新计算大小
+     */
+    public void reCaculateSize() {
+        size = 1;
+        if (left != null) {
+            size += left.size;
+        }
+
+        if (right != null) {
+            size += right.size;
+        }
+    }
 }
